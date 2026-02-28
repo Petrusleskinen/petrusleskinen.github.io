@@ -1,0 +1,372 @@
+
+/*TIETOKONE NÄKYMÄ*/
+/*******************/
+
+nav {
+    background-color: darkkhaki;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e0e0e0;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin: 0;
+    padding: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #000000;
+    font-size: 25px;
+    font-weight: 500;
+    display: inline-block;
+    transition: transform 0.25s ease, color 0.25 ease;
+}
+.nav-links a:hover {
+    color: darkcyan;
+    transform: translateY(-3px);
+}
+
+/*MOBIILINÄKYMÄ*/
+/****************/
+
+.menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .menu-icon {
+        display: block;
+    }
+    nav {
+        display: none;
+        background-color: white;
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+    }
+    .menu-toggle:checked + .menu-icon + nav {
+        display: block;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/*FOOTER*/
+/********/
+
+footer {
+    background-color: darkkhaki;
+    padding: 30px 0;    
+    margin-top: 60px;
+    border-top: 1px solid #ddd;
+}
+.footer-content {
+    text-align: center;
+    font-family: sans-serif;
+    color: #000;
+}
+.footer-content p {
+    margin: 8px 0;
+    font-size: 18px;
+}
+.footer-content a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+.footer-content a:hover {
+    color: darkcyan;
+}
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 28px;
+}
+.social-icons a:hover {
+    opacity: 0.7;
+}
+.social-icons i {
+    font-size: 30px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.social-icons a:hover i {
+    transform: translateY(-3px);
+    opacity: 0.7;
+}
+
+/*FOOTER MOBIILINÄKYMÄ*/
+/**********************/
+
+@media (max-width: 768px) {
+    .footer-content p {
+        font-size: 16px;
+    }
+    .social-icons {
+        font-size: 24px;
+        gap: 15px;
+    }
+}
+
+/*PERUSRAKENNE BODY,MAIN*/
+/************************/
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+}
+
+/*HERO-OSIO (KUVA+TEKSTI)*/
+/************************/
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 20px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+}
+.hero-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ddd;
+    image-rendering: auto;
+    transition: transform 0.3s ease;
+}
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+.hero-text {
+    max-width: 500px;
+    font-family: sans-serif;
+}
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/*HERO MOBIILI*/
+/**************/
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/*HARRASTUKSET*/
+/**************/
+
+.info-box {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-family: sans-serif;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.info-box h2 {
+    margin-top: 0;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.info-box p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/*HARRASTUKSET MOBIILI*/
+/*********************/
+
+@media (max-width: 768px) {
+    .info-box {
+        padding: 20px;
+        margin: 30px 15px;
+    }
+    .info-box h2 {
+        font-size: 24px;
+    }
+    .info-box p {
+        font-size: 16px;
+    }
+}
+
+/*TAIDOT*/
+/********/
+
+.skills-box {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+.skills-box ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/*MIKSI VALITA MINUT*/
+/********************/
+
+.why-me {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    font-family: sans-serif;
+}
+.why-me h2 {
+    margin-top: 0;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.why-me p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/*MIKSI MINUT MOBIILI*/
+/*********************/
+
+@media (max-width: 768px) {
+    .why-me {
+        padding: 20px;
+        margin: 30px 15px;
+    }
+    .why-me h2 {
+        font-size: 24px;
+    }
+    .why-me p {
+        font-size: 16px;
+    }
+}
+
+/*KOULUTUSSIVU*/
+/*AIKAJANA*/
+/**********/
+
+.timeline {
+    max-width: 900px;
+    margin: 60px auto;
+    position: relative;
+}
+.timeline-item {
+    display: flex;
+    margin: 30px 0;
+}
+.timeline-item.left {
+    justify-content: flex-start;
+}
+.timeline-item.right {
+    justify-content: flex-end;
+}
+.timeline-content {
+    width: 45%;
+    background-color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.timeline-content h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+.timeline-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*KESKILINJA*/
+/************/
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #ccc;
+    transform: translateX(-50%);
+}
+
+/*AIKAJANA MOBIILI*/
+/******************/
+
+@media (max-width: 768px) {
+    .timeline-item {
+        justify-content: center;
+    }
+    .timeline-content {
+        width: 90%;
+    }
+    .timeline::before {
+        left: 20px;
+    }
+}
+
+/*LAATIKOIDEN HOVER*/
+/*******************/
+
+.info-box,
+.skills-box,
+.why-me,
+.timeline-content {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.info-box:hover,
+.skills-box:hover,
+.why-me:hover,
+.timeline-content:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
